@@ -1,234 +1,191 @@
-# TaskGo - Aplicación de Gestión de Tareas
+# ⚙️ Electromechanics
 
 ## Descripción del proyecto
 
-**TaskGo** es una aplicación móvil desarrollada para dispositivos Android que permite organizar, administrar y realizar un seguimiento de las tareas personales de manera sencilla e intuitiva.
+**Electromechanics** es una aplicación móvil Android orientada a la gestión de servicios de mantenimiento electromecánico, permitiendo conectar clientes y trabajadores mediante una plataforma digital.
 
-El proyecto busca solucionar la problemática de la desorganización de actividades cotidianas, proporcionando una herramienta digital que permite registrar tareas, consultar su información, modificarlas, eliminarlas y marcarlas como completadas.
-
-La aplicación fue desarrollada utilizando **Kotlin y Jetpack Compose**, incorporando Material Design 3, arquitectura MVVM, almacenamiento local mediante Room, animaciones y recursos nativos del dispositivo.
-
-- Institución: Duoc UC
-- Asignatura: Desarrollo de Aplicaciones Móviles DSY1105
-- Proyecto: TaskGo
-- Integrantes: Matías Herrera
-
-## Objetivo general
-
-Desarrollar una aplicación móvil Android que facilite la organización y seguimiento de tareas personales mediante una interfaz intuitiva, gestión de estado, persistencia local y funcionalidades interactivas.
-
-## Objetivos específicos
-
-- Implementar una interfaz moderna utilizando Material Design 3.
-- Permitir la creación, visualización, edición y eliminación de tareas.
-- Incorporar validaciones para evitar el ingreso de información vacía.
-- Utilizar arquitectura MVVM para organizar las responsabilidades del proyecto.
-- Almacenar las tareas localmente mediante Room.
-- Integrar notificaciones y vibración como recursos nativos.
-- Implementar animaciones que mejoren la experiencia del usuario.
-- Visualizar estadísticas sobre el cumplimiento de las tareas.
+El proyecto busca facilitar la administración de solicitudes, el seguimiento de servicios y la gestión de información mediante una aplicación móvil conectada a un backend y una base de datos Oracle.
 
 ## Tecnologías utilizadas
 
-| Tecnología | Utilización |
-|---|---|
-| Kotlin | Lenguaje principal de programación |
-| Android Studio | Entorno de desarrollo |
-| Jetpack Compose | Construcción de interfaces |
-| Material Design 3 | Diseño visual |
-| MVVM | Organización de la aplicación |
-| Room | Persistencia local de datos |
-| SQLite | Motor de base de datos utilizado por Room |
-| Coroutines | Ejecución de operaciones asíncronas |
-| State de Compose | Gestión reactiva de la interfaz |
-| NotificationManager | Notificaciones del dispositivo |
-| Vibrator / VibrationEffect | Retroalimentación mediante vibración |
-| GitHub | Repositorio del proyecto y control de versiones |
+### Aplicación Android
+- Kotlin
+- Android Studio
+- Jetpack Compose
+- Material Design 3
+- MVVM (Model-View-ViewModel)
+- ViewModel
+- StateFlow
+- Room / SQLite
+- Retrofit
 
-## Funcionalidades implementadas
-
-### 1. Gestión de tareas (CRUD)
-
-La aplicación permite:
-
-- Crear tareas con título y descripción.
-- Visualizar las tareas registradas.
-- Editar el título y la descripción de una tarea.
-- Eliminar tareas.
-- Marcar tareas como completadas o pendientes.
-
-### 2. Validación de formularios
-
-El formulario de creación comprueba que el título y la descripción no estén vacíos.
-
-Cuando el usuario intenta guardar una tarea sin completar los campos obligatorios, la aplicación muestra mensajes de error y resalta los campos correspondientes.
-
-### 3. Persistencia local
-
-TaskGo utiliza Room para almacenar la información de las tareas en una base de datos local.
-
-Esto permite conservar las tareas registradas incluso después de cerrar y volver a abrir la aplicación.
-
-### 4. Navegación entre pantallas
-
-La aplicación cuenta con tres pantallas principales:
-
-**Inicio:** permite consultar y administrar las tareas.
-
-**Agregar tarea:** contiene el formulario para registrar nuevas tareas.
-
-**Estadísticas:** presenta información sobre el progreso del usuario.
-
-La navegación se realiza mediante una barra inferior.
-
-### 5. Estadísticas
-
-La pantalla de estadísticas muestra:
-
-- Cantidad total de tareas.
-- Cantidad de tareas completadas.
-- Cantidad de tareas pendientes.
-- Porcentaje de cumplimiento.
-- Barra de progreso animada.
-
-Los valores se calculan a partir de las tareas registradas y se actualizan cuando cambia su estado.
-
-### 6. Recursos nativos
-
-**Notificaciones:** al registrar una nueva tarea, la aplicación puede mostrar una notificación del sistema Android.
-
-**Vibración:** al completar una tarea, la aplicación activa una breve vibración como confirmación de la acción.
-
-Se utilizan los permisos correspondientes según las características y la versión de Android.
-
-### 7. Animaciones
-
-TaskGo incorpora animaciones para mejorar la respuesta visual de la interfaz, incluyendo:
-
-- Animaciones en elementos de la lista.
-- Transiciones de color según el estado de las tareas.
-- Cambios visuales animados al completar actividades.
-- Animación de la barra de progreso de estadísticas.
-
-## Arquitectura del proyecto
-
-La aplicación utiliza el patrón **MVVM (Model - View - ViewModel)** para separar la representación visual, el manejo del estado y la gestión de datos.
-
-### Model
-
-Representa la información de una tarea mediante sus atributos principales:
-
-- Identificador.
-- Título.
-- Descripción.
-- Estado de cumplimiento.
-
-### View
-
-Está implementada mediante Jetpack Compose y contiene las pantallas y componentes visuales con los que interactúa el usuario.
-
-### ViewModel
-
-Gestiona el estado de las tareas, coordina las operaciones de creación, actualización y eliminación, y proporciona los datos necesarios para actualizar la interfaz.
+### Backend
+- Java
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- API REST
+- Maven
 
 ### Base de datos
+- Oracle Cloud
+- Oracle Database
+- JDBC
+- Hibernate ORM
 
-La persistencia se implementa mediante Room, utilizando:
+### Herramientas de desarrollo
+- Git
+- GitHub
+- Postman
+- Android Studio
+- Visual Studio Code
 
-- `TareaEntity`: entidad de la base de datos.
-- `TareaDao`: operaciones de acceso a los datos.
-- `TaskGoDatabase`: configuración de la base de datos local.
+## Funcionalidades principales
 
-## Estructura principal del proyecto
+### Módulo Cliente
+- Inicio de sesión.
+- Registro de solicitudes de mantenimiento.
+- Ingreso de título y descripción de solicitudes.
+- Consulta de solicitudes realizadas.
+- Visualización del estado de las solicitudes.
+
+### Módulo Trabajador
+- Gestión de servicios asignados.
+- Consulta de órdenes de trabajo.
+- Registro de información de mantenimiento.
+- Gestión de informes técnicos.
+- Uso de funcionalidades de ubicación y cámara.
+
+## Arquitectura del sistema
+
+El proyecto utiliza una arquitectura basada en tres componentes principales:
+
+1. **Aplicación Android:** desarrollada en Kotlin y Jetpack Compose.
+2. **Backend:** desarrollado con Spring Boot, encargado de procesar las solicitudes y gestionar la comunicación mediante servicios REST.
+3. **Base de datos:** Oracle Cloud, utilizada para almacenar la información del sistema.
+
+### Flujo de comunicación
 
 ```text
-TaskGo/
-├── app/
-│   └── src/main/
-│       ├── java/com/example/taskgo/
-│       │   ├── database/
-│       │   │   ├── TareaEntity.kt
-│       │   │   ├── TareaDao.kt
-│       │   │   └── TaskGoDatabase.kt
-│       │   ├── model/
-│       │   │   └── Tarea.kt
-│       │   ├── ui/
-│       │   │   └── screens/
-│       │   │       ├── AgregarTareaScreen.kt
-│       │   │       └── EstadisticasScreen.kt
-│       │   ├── viewmodel/
-│       │   │   └── TareaViewModel.kt
-│       │   ├── MainActivity.kt
-│       │   └── RecursosNativos.kt
-│       └── AndroidManifest.xml
-├── gradle/
-├── build.gradle.kts
-├── settings.gradle.kts
-└── README.md
+        APLICACIÓN ANDROID
+        Kotlin / Compose
+               |
+               |
+            Retrofit
+               |
+               v
+        BACKEND SPRING BOOT
+             API REST
+               |
+               |
+        Spring Data JPA
+               |
+               v
+          ORACLE CLOUD
+          BASE DE DATOS
 ```
 
-## Requisitos para ejecutar
+## Backend y API REST
 
-- Android Studio instalado.
-- SDK de Android configurado.
-- Conexión a Internet para descargar dependencias de Gradle.
-- Emulador Android o dispositivo físico compatible.
+El backend permite gestionar la comunicación entre la aplicación Android y la base de datos.
+
+Se utilizan servicios REST para operaciones como:
+
+- Consultar solicitudes.
+- Registrar nuevas solicitudes.
+- Consultar información de servicios.
+- Gestionar información de mantenimiento.
+
+Las pruebas de comunicación y operaciones de la API se realizan mediante Postman.
+
+## Base de datos
+
+El sistema utiliza Oracle Cloud como plataforma de almacenamiento de información.
+
+La conexión se realiza mediante JDBC y la persistencia de datos se gestiona utilizando Spring Data JPA e Hibernate.
 
 ## Instalación y ejecución
 
-1. Descargar o clonar el repositorio de GitHub.
-2. Si el proyecto se encuentra comprimido, extraer el archivo ZIP.
-3. Abrir Android Studio.
-4. Seleccionar **Open**.
-5. Buscar la carpeta raíz del proyecto TaskGo.
-6. Esperar a que finalice la sincronización de Gradle.
-7. Configurar un emulador Android o conectar un dispositivo físico.
-8. Presionar **Run** para compilar y ejecutar la aplicación.
-9. Conceder el permiso de notificaciones si el dispositivo lo solicita.
+### Aplicación Android
 
-## Pruebas funcionales
+1. Descargar o clonar el repositorio.
+2. Abrir el proyecto desde Android Studio.
+3. Esperar la sincronización de Gradle.
+4. Configurar el acceso al backend.
+5. Ejecutar la aplicación en un emulador o dispositivo Android.
 
-Para verificar el funcionamiento de TaskGo se pueden realizar las siguientes pruebas:
+### Backend
 
-1. Crear una tarea con título y descripción válidos.
-2. Intentar guardar una tarea con campos vacíos y comprobar los mensajes de error.
-3. Editar una tarea existente.
-4. Marcar una tarea como completada.
-5. Comprobar la vibración al completar una tarea.
-6. Crear una tarea y verificar la notificación.
-7. Eliminar una tarea.
-8. Consultar las estadísticas y verificar los valores.
-9. Cerrar y volver a abrir la aplicación para comprobar que las tareas permanezcan guardadas.
+1. Abrir el proyecto backend.
+2. Configurar las credenciales de conexión a Oracle.
+3. Verificar la configuración de la base de datos.
+4. Ejecutar el backend mediante Maven:
 
-## Herramientas de organización
+```bash
+mvn spring-boot:run
+```
 
-**GitHub:** utilizado para almacenar el código fuente del proyecto y gestionar sus versiones.
+El servidor estará disponible en el puerto configurado, normalmente:
 
-**Trello:** herramienta contemplada para organizar las actividades del equipo, distribuir responsabilidades y registrar el avance de las tareas.
+```text
+http://localhost:8080
+```
 
-## Posibles mejoras futuras
+### Conexión con dispositivo físico
 
-- Incorporar categorías para clasificar tareas.
-- Agregar fechas límite y prioridades.
-- Implementar recordatorios programados.
-- Incorporar filtros y búsqueda.
-- Mejorar la accesibilidad y adaptación a diferentes tamaños de pantalla.
-- Ampliar las pruebas automatizadas.
-- Separar el acceso a datos mediante una capa Repository.
+Para ejecutar la aplicación desde un teléfono Android, se debe configurar la dirección IP local del computador donde se encuentra funcionando el backend.
 
-## Conclusión
+## Pruebas realizadas
 
-El desarrollo de TaskGo permitió aplicar conocimientos fundamentales de programación móvil Android, integrando interfaces modernas, navegación funcional, gestión de estado y almacenamiento local.
+- Verificación de compilación Android.
+- Pruebas de funcionamiento de la aplicación.
+- Pruebas de endpoints mediante Postman.
+- Pruebas de comunicación con el backend.
+- Verificación de operaciones de solicitudes.
+- Generación de APK en versión Release.
+- Firma del APK de entrega.
 
-La utilización de Kotlin y Jetpack Compose facilitó la construcción de componentes visuales reutilizables, mientras que la arquitectura MVVM permitió organizar el código y separar responsabilidades.
+## Versión de entrega
 
-La implementación de Room proporciona persistencia de datos, y los recursos nativos, como notificaciones y vibración, mejoran la interacción del usuario con la aplicación.
+Se generó una versión de producción de la aplicación Android mediante Android Studio.
 
-Finalmente, las animaciones y estadísticas complementan la experiencia, proporcionando una solución funcional para la administración de tareas personales.
+**Archivo:** `app-release.apk`
 
-TaskGo constituye una base para continuar incorporando nuevas funcionalidades y perfeccionando el proyecto durante las siguientes etapas de desarrollo académico.
+**Tipo de compilación:** Release
 
+**Firma:** APK firmado.
 
+## Documentación técnica
 
-Link del Trello.
-https://trello.com/invite/b/6ad8492633d9ab0dc8f1e5ef/ATTI0e573ed8b1c6394ae30711f7a85b486dD939BD4E/taskgo-desarrollo-de-aplicaciones-moviles
+El proyecto contempla documentación técnica y diagramas que describen:
+
+- Arquitectura general del sistema.
+- Comunicación entre Android y backend.
+- Funcionamiento de los componentes.
+- Flujo de información.
+- Integración con Oracle Cloud.
+
+## Seguridad
+
+- Las credenciales de Oracle deben mantenerse protegidas.
+- No publicar contraseñas ni archivos Wallet.
+- No subir claves privadas de firma al repositorio.
+- Utilizar archivos de configuración seguros para las conexiones.
+
+## Información académica
+
+**Proyecto:** Electromechanics
+
+**Área:** Desarrollo de aplicaciones móviles.
+
+**Plataforma:** Android.
+
+**Lenguaje principal:** Kotlin.
+
+**Backend:** Spring Boot.
+
+**Base de datos:** Oracle Cloud.
+
+---
+
+Desarrollado como proyecto académico de desarrollo de software.
